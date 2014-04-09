@@ -1,11 +1,50 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>Logo Informática</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
 </head>
 <body>
-	<p>
-		texto
-	</p>
+    <canvas id ="logo" height="500" width="500" style="border:2px solid red">
+
+    </canvas >
+    
+
 </body>
+    <script>
+        window.onload = function () {
+            start();
+        }
+        function initWebGL(idCanvas) {
+            if (window.WebGLRenderingContext) {
+                canvas = document.getElementById(idCanvas);
+                ctx = canvas.getContext("webgl");
+                if (!ctx) {
+                    alert("unknown webGL error");
+                    window.location = "http://get.webgl.org";
+                } else {
+                    return;
+                }
+            } else {
+                alert("Lo sentimos, su browser no tiene soporte para WebGL.");
+                window.location = "http://get.webgl.org";
+            }
+        }
+
+        function start() {
+            initWebGL("logo");
+            render();
+        }
+        function render() {
+            window.requestAnimationFrame(render, canvas);
+            
+        }
+
+        /*
+        var canvas = document.getElementById("logo");
+        var ctx = canvas.getContext("experimentalwebgl");
+        ctx.fillRect(20, 20, 30, 20);
+        ctx.fillRect(20, 20, 50, 50);
+        */
+    </script>
 </html>
