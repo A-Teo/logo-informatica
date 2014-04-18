@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="stylesheet" type ="text/css" href="Styles/canvas.css"/>
+</head>
+<body>
+    <script src ="Scripts/three.js" ></script>
+    <script src = "Scripts/init.js"></script>
+    <script src ="Scripts/create.js"></script>
+    <script src ="Scripts/update.js"></script>
+    <script src="res/fonts/optimer_regular.typeface.js"></script> 
+    <canvas id ="logo" height="600" width="600">
+
+    </canvas >
+    
+
+</body>
+    <script>
+        var renderer;
+        var scene;
+        var camera;
+        var textoRotatorio;
+        window.onload = function () {
+            init();
+            animate();
+        }
+
+        function animate() {
+            updateScene();
+            renderer.render(scene, camera);
+            window.requestAnimationFrame(animate);
+        }
+
+        function setScene() {
+            scene.add(crearElementos.esfera());
+            textoRotatorio = crearElementos.textoRotatorio();
+            scene.add(textoRotatorio);
+        }
+
+        function updateScene() {
+            textoRotatorio.rotation.y += 0.1;
+        }
+        
+    </script>
+</html>

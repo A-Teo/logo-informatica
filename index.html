@@ -3,9 +3,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <style></style>
 </head>
 <body>
     <script src ="Scripts/three.js" ></script>
+    <script src="src/Fonts/optimer_regular.typeface.js"></script> 
     <canvas id ="logo" height="500" width="500" style="border:2px solid red">
 
     </canvas >
@@ -13,18 +15,32 @@
 
 </body>
     <script>
+        var renderer;
+        var scene;
+        var camera;
+        var elements = new Array();
+        var mainSphere = "esferaLogo";
         window.onload = function () {
             start();
         }
+        function initGlobalVariables(logoCanvas) {
+            scene = new THREE.Scene();
+            var width = logoCanvas.getAttribute("width");
+            var height = logoCanvas.getAttribute("height");
+            renderer = new THREE.WebGLRenderer({ canvas: logoCanvas });
+            renderer.setSize(width, height);
+            camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
+            scene.add(camera);
+        }
         function initWebGL(idCanvas) {
             if (window.WebGLRenderingContext) {
-                canvas = document.getElementById(idCanvas);
-                ctx = canvas.getContext("webgl");
+                var logoCanvas = document.getElementById(idCanvas);
+                var ctx = logoCanvas.getContext("webgl");
                 if (!ctx) {
                     alert("unknown webGL error");
                     window.location = "http://get.webgl.org";
                 } else {
-                    return;
+                    initGlobalVariables(logoCanvas);
                 }
             } else {
                 alert("Lo sentimos, su browser no tiene soporte para WebGL.");
@@ -32,20 +48,106 @@
             }
         }
 
-        function start() {
-            initWebGL("logo");
-            render();
-        }
-        function render() {
-            window.requestAnimationFrame(render, canvas);
-            
+        function animate() {
+            updateScene();
+            window.requestAnimationFrame(animate);
+            renderer.render(scene, camera);
         }
 
-        /*
-        var canvas = document.getElementById("logo");
-        var ctx = canvas.getContext("experimentalwebgl");
-        ctx.fillRect(20, 20, 30, 20);
-        ctx.fillRect(20, 20, 50, 50);
-        */
+        function start() {
+            initWebGL("logo");
+            setScene();
+            camera.position.z = 50;
+            animate();
+        }
+
+        function setScene() {
+            //crearElementos.esferaLogo();
+            //crearElementos.texto1();
+
+            group = new THREE.Object3D();
+            group.add(crearElementos.texto());
+            scene.add(group);
+
+            scene.add(crearElementos.esfera());
+        }
+        function updateScene() {
+            group.rotation.y += 0.1;
+
+            //actualizarElementos.esferaLogo();
+            //actualizarElementos.texto1();
+            //actualizarElementos.cubo1();
+        }
+        var crearElementos = {
+            esfera : function () {
+                var geometry = new THREE.SphereGeometry( 10, 32, 32);
+                var material = new THREE.MeshNormalMaterial( {color: 0x70a0e0} );
+                var sphere = new THREE.Mesh( geometry, material );
+                return sphere;
+            },
+
+            texto : function () {
+                var text = "Informatica",
+                    height = 1,
+                    size = 6,
+
+                    curveSegments = 4,
+
+                    bevelThickness = 0.5,
+                    bevelSize = 0.2,
+                    bevelEnabled = true,
+
+                    font = "optimer",
+                    weight = "normal",
+                    style = "normal";
+                var properties = {
+                    size: size,
+                    height: height,
+                    curveSegments: curveSegments,
+					
+                    bevelThickness: bevelThickness,
+                    bevelSize: bevelSize,
+                    bevelEnabled: bevelEnabled,
+
+                    font: font,
+                    weight: weight,
+                    style: style
+                };
+                var textGeo = new THREE.TextGeometry( text, properties);
+                var material = new THREE.MeshNormalMaterial( {color: 0x307090} );
+                textGeo.computeBoundingBox();
+                var centerOffset = -0.5 * ( textGeo.boundingBox.max.x - textGeo.boundingBox.min.x );
+                var txt1 = new THREE.Mesh( textGeo, material );
+                txt1.position.x = centerOffset;
+                txt1.position.z = 12;
+                txt1.position.y = -3;
+                return txt1;
+            }
+        }
+        var actualizarElementos = {
+            esferaLogo: function() {
+                var esfera = elements["esfera"];
+                (
+                    rotar = function () {
+                        esfera.rotation.x += 0.1;
+                        esfera.rotation.y += 0.1;
+                        camera.position.z = 2;
+                    }
+                )();
+            },
+            cubo1: function() {
+                var cube = elements["cube"];
+                (
+                    rotar = function() {
+                     //   cube.rotation.x += 0.1;
+                       // cube.rotation.y += 0.1;
+                        camera.position.z = 5;    
+                    }
+                )();
+            },
+            texto1: function () {
+                var texto = elements["texto1"];
+            }
+        }
     </script>
 </html>

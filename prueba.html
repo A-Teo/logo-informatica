@@ -12,14 +12,14 @@
 		var renderer = new THREE.WebGLRenderer();
 		renderer.setSize(window.innerWidth, window.innerHeight); 
 		document.body.appendChild(renderer.domElement);
-		
+/*
 		var esfera = function () {
 			var geometry = new THREE.SphereGeometry( 10, 32, 32);
 			var material = new THREE.MeshNormalMaterial( {color: 0x70a0e0} );
 			var sphere = new THREE.Mesh( geometry, material );
 			return sphere;
 		};
-		
+	*/	/*
 		var texto = function () {
 			var text = "Informatica",
 				height = 1,
@@ -57,15 +57,15 @@
 			txt1.position.y = -3;
 			return txt1;
 		};
-		
+		*/
 		var bola = esfera();
 		scene.add( bola );
-		
+		/*
 		var txt = texto();		
 		var group = new THREE.Object3D();
 		group.add( txt );
 		scene.add( group );				
-		
+		*/
 		camera.position.z = 50; 
 		var render = function () { 
 			requestAnimationFrame(render); 
