@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Logo Ingeniería en Informática UMSS</title>
     <link rel="stylesheet" type ="text/css" href="Styles/canvas.css"/>
 </head>
 <body>
@@ -10,13 +10,10 @@
     <script src = "Scripts/init.js"></script>
     <script src ="Scripts/create.js"></script>
     <script src ="Scripts/update.js"></script>
-    <script src="res/fonts/optimer_regular.typeface.js"></script> 
-    <canvas id ="logo" height="250" width="960">
+    <script src="res/fonts/optimer_regular.typeface.js"></script>
+    <script src="res/fonts/optimer_bold.typeface.js"></script>  
+    <canvas id ="logo" height="250" width="960"></canvas>
 
-    </canvas >
-    
-
-</body>
     <script>
         var renderer;
         var scene;
@@ -34,9 +31,10 @@
         }
 
         function setScene() {
-            scene.add(crearElementos.esfera());
+            scene.add(crearElementos.globo());
             textoRotatorio = crearElementos.textoRotatorio();
             scene.add(textoRotatorio);
+            scene.add(crearElementos.textoLambda());
         }
 
         function updateScene() {
@@ -44,4 +42,5 @@
         }
         
     </script>
+</body>
 </html>

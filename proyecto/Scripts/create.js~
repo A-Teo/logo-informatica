@@ -60,8 +60,8 @@ var crearElementos = {
             bevelSize: 0.2,
             bevelEnabled: true,
 
-            font: "optimer",
-            weight: "bold",
+            font: "oprimer",
+            weight: "normal",
             style: "normal"
         });
         var material = new THREE.MeshNormalMaterial({ color: 0x309070 });
