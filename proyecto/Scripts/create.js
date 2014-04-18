@@ -48,5 +48,10 @@
         txt1.position.z = 12;
         txt1.position.y = -3;
         return txt1;
+    },
+    nube: function () {
+        var group = new THREE.Object3D();
+        group.add(crearElementos.esfera());
+        return group;
     }
 }
