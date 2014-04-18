@@ -11,7 +11,7 @@
     <script src ="Scripts/create.js"></script>
     <script src ="Scripts/update.js"></script>
     <script src="res/fonts/optimer_regular.typeface.js"></script> 
-    <canvas id ="logo" height="250" width="960">
+    <canvas id ="logo" height="200" width="200">
 
     </canvas >
     

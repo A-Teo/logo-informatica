@@ -1,7 +1,6 @@
 function init() {
     initWebGL("logo");
     setScene();
-    camera.position.z = 50;
 }
 
 function initGlobalVariables(logoCanvas) {

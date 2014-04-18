@@ -1,5 +1,5 @@
 var actualizarElementos = {
-    rotar: function() {
+    function rotar() {
     	textoRotatorio.rotation.y += 0.1;
     }
 }
