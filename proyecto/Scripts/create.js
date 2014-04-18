@@ -51,8 +51,29 @@
     },
     nube: function () {
         var group = new THREE.Object3D();
-        group.add(crearElementos.esfera());
+        group.add(crearElementos.esfera1());
+        group.add(crearElementos.esfera2());
+        group.add(crearElementos.esfera3());
+        group.position.set(10, 10, 10);
         return group;
+    },
+    esfera1: function () {
+        var geometry = new THREE.SphereGeometry(5, 32, 32, 0, Math.PI/2, 0, Math.PI/2);
+        var material = new THREE.MeshBasicMaterial({ color: 0xcccccc });
+        var sphere = new THREE.Mesh(geometry, material);
+        return sphere;
+    },
+    esfera2: function () {
+        var geometry = new THREE.SphereGeometry(5, 32, 32, 90, Math.PI / 2, 0, Math.PI / 2);
+        var material = new THREE.MeshBasicMaterial({ color: 0xcccccc });
+        var sphere = new THREE.Mesh(geometry, material);
+        return sphere;
+    },
+    esfera3: function () {
+        var geometry = new THREE.SphereGeometry(5, 32, 32, 45, Math.PI/2, 0, Math.PI/2);
+        var material = new THREE.MeshBasicMaterial({ color: 0xcccccc });
+        var sphere = new THREE.Mesh(geometry, material);
+        return sphere;
     },
     textoLambda: function () {
     	var textGeo = new THREE.TextGeometry("i++", {
