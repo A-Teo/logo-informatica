@@ -1,4 +1,4 @@
-﻿var crearElementos = {
+var crearElementos = {
     globo: function () {
         var geometry = new THREE.SphereGeometry(10, 32, 32);
         var material = new THREE.MeshNormalMaterial({ color: 0x70a0e0 });
@@ -49,11 +49,7 @@
         txt1.position.y = -3;
         return txt1;
     },
-    nube: function () {
-        var group = new THREE.Object3D();
-        group.add(crearElementos.esfera());
-        return group;
-    },
+    
     textoLambda: function () {
     	var textGeo = new THREE.TextGeometry("i++", {
             size: 4,
@@ -64,8 +60,8 @@
             bevelSize: 0.2,
             bevelEnabled: true,
 
-            font: "optimer",
-            weight: "bold",
+            font: "oprimer",
+            weight: "normal",
             style: "normal"
         });
         var material = new THREE.MeshNormalMaterial({ color: 0x309070 });
