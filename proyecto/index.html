@@ -6,14 +6,17 @@
     <link rel="stylesheet" type ="text/css" href="Styles/canvas.css"/>
 </head>
 <body>
-    <script src ="Scripts/three.js" ></script>
-    <script src = "Scripts/init.js"></script>
+    <script src ="Scripts/three.min.js" ></script>
+    <script src ="Scripts/init.js"></script>
     <script src ="Scripts/create.js"></script>
     <script src ="Scripts/update.js"></script>
     <script src="res/fonts/optimer_regular.typeface.js"></script>
-    <script src="res/fonts/optimer_bold.typeface.js"></script>  
+    <script src="res/fonts/optimer_bold.typeface.js"></script>
+    <script src="res/fonts/helvetiker_regular.typeface.js"></script>
+    <script src="res/fonts/helvetiker_bold.typeface.js"></script>  
+    <script src="res/fonts/gentilis_regular.typeface.js"></script>
+    <script src="res/fonts/gentilis_bold.typeface.js"></script>    
     <canvas id ="logo" height="250" width="960"></canvas>
-
     <script>
         var renderer;
         var scene;
@@ -32,9 +35,10 @@
 
         function setScene() {
             scene.add(crearElementos.globo());
-            textoRotatorio = crearElementos.textoRotatorio();
+            textoRotatorio = crearElementos.textoRotatorio("Informática");
             scene.add(textoRotatorio);
-            scene.add(crearElementos.textoLambda());
+            scene.add(crearElementos.textoLambda("i++"));
+            crearElementos.grafo();
         }
 
         function updateScene() {
