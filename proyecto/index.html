@@ -21,7 +21,9 @@
         var renderer;
         var scene;
         var camera;
-        var textoRotatorio;
+        var textoRotatorio1;
+        var textoRotatorio2;
+        var nubesRotatorias2;
         window.onload = function () {
             init();
             animate();
@@ -35,15 +37,24 @@
 
         function setScene() {
             scene.add(crearElementos.globo());
-            textoRotatorio = crearElementos.textoRotatorio("Informática");
-            scene.add(textoRotatorio);
-            scene.add(crearElementos.nube());
+            textoRotatorio1 = crearElementos.textoRotatorio("Informática");
+            scene.add(textoRotatorio1);
+            textoRotatorio2 = crearElementos.textoRotatorio("Ingeniería");
+            scene.add(textoRotatorio2);
+            nubesRotatorias = crearElementos.nubes();
+            scene.add(nubesRotatorias);
             scene.add(crearElementos.textoLambda("i++"));
-            crearElementos.grafo();
+
+            
+            //var geometry = new THREE.Geometry();
+
+            //crearElementos.grafo();
         }
 
         function updateScene() {
-            actualizarElementos.rotar();
+            actualizarElementos.rotarTexto1();
+            actualizarElementos.rotarTexto2();
+            actualizarElementos.rotarNubes();
         }
         
     </script>

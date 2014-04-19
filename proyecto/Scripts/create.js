@@ -48,30 +48,73 @@
         txt1.position.y = -2.5;
         return txt1;
     },
-    nube: function () {
+    nubes: function () {
+        var group = new THREE.Object3D();
+        var geometry = new THREE.Geometry();
+        //group.add(crearElementos.nube(0, 0, 0, geometry));
+        group.add(crearElementos.nube(-50, 10, -10, geometry));
+        group.add(crearElementos.nube(38, 5, -5, geometry));
+        group.add(crearElementos.nube(45, -5, 10, geometry));
+        //group.add(crearElementos.nube(0, 0, 0, geometry));
+        group.add(crearElementos.nube(-20, -7, 15, geometry));
+        group.add(crearElementos.nube(-50, 10, -10, geometry));
+        //group.add(crearElementos.nube(0, 0, 0, geometry));
+        var line = new THREE.Line(geometry, new THREE.LineBasicMaterial({ color: 0xffffff, opacity: 1 }));
+        group.add(line);
+
+        return group;
+    },
+    nube: function (xNube, yNube, zNube, geometry) {
         var group = new THREE.Object3D();
         group.add(crearElementos.esfera1());
         group.add(crearElementos.esfera2());
         group.add(crearElementos.esfera3());
-        group.position.set(10, 10, 10);
+        //group.add(crearElementos.esfera4());
+        //group.add(crearElementos.esfera5());
+        geometry.vertices.push(new THREE.Vector3(xNube, yNube, zNube));
+        group.position.set(xNube, yNube, zNube);
         return group;
     },
-    esfera1: function () {
-        var geometry = new THREE.SphereGeometry(5, 32, 32, 0, Math.PI/2, 0, Math.PI/2);
+    esfera: function (r, w, h, hStartAngle, hSweep, vStartAngle, vSweep) {
+        var geometry = new THREE.SphereGeometry(r, w, h, hStartAngle, hSweep, vStartAngle, vSweep);
         var material = new THREE.MeshBasicMaterial({ color: 0xcccccc });
         var sphere = new THREE.Mesh(geometry, material);
+        return sphere;
+
+    },
+    esfera1: function () {
+        var geometry = new THREE.SphereGeometry(1, 10, 10, Math.PI, Math.PI * 2, 0, Math.PI/2);
+        var material = new THREE.MeshBasicMaterial({ color: 0xcccccc });
+        var sphere = new THREE.Mesh(geometry, material);
+        sphere.position.set(-1, 0, 0);
         return sphere;
     },
     esfera2: function () {
-        var geometry = new THREE.SphereGeometry(5, 32, 32, 90, Math.PI / 2, 0, Math.PI / 2);
+        var geometry = new THREE.SphereGeometry(1, 10, 10, Math.PI, Math.PI * 2, 0, Math.PI / 2);
         var material = new THREE.MeshBasicMaterial({ color: 0xcccccc });
         var sphere = new THREE.Mesh(geometry, material);
+        sphere.position.set(1, 0, 0);
         return sphere;
     },
     esfera3: function () {
-        var geometry = new THREE.SphereGeometry(5, 32, 32, 45, Math.PI/2, 0, Math.PI/2);
+        var geometry = new THREE.SphereGeometry(1, 20, 20, 0, Math.PI * 2, 0, Math.PI/2);
         var material = new THREE.MeshBasicMaterial({ color: 0xcccccc });
         var sphere = new THREE.Mesh(geometry, material);
+        sphere.position.set(0, 0, 0);
+        return sphere;
+    },
+    esfera4: function () {
+        var geometry = new THREE.SphereGeometry(1, 20, 20, 0, Math.PI * 2, 0, Math.PI / 2);
+        var material = new THREE.MeshBasicMaterial({ color: 0xcccccc });
+        var sphere = new THREE.Mesh(geometry, material);
+        sphere.position.set(-1, 0, 0);
+        return sphere;
+    },
+    esfera5: function () {
+        var geometry = new THREE.SphereGeometry(1, 20, 20, 0, Math.PI * 2, 90, Math.PI / 2);
+        var material = new THREE.MeshBasicMaterial({ color: 0xcccccc });
+        var sphere = new THREE.Mesh(geometry, material);
+        sphere.position.set(1, 0, 0);
         return sphere;
     },
     
@@ -120,7 +163,7 @@
 		particle = new THREE.Sprite( material );
 		particle.position.set(-80,10,-10);
 		particle.scale.x = particle.scale.y = 10;
-		scene.add( particle );
+		//scene.add( particle );
 		geometry.vertices.push( particle.position );
 
 		particle = new THREE.Sprite( material );
@@ -134,7 +177,7 @@
 		geometry.vertices.push( particle.position );
 					
 		particle = new THREE.Sprite( material );
-		particle.position.set(-20,-2,15); 					
+		particle.position.set(-20, -2, 15); 					
 		//scene.add( particle );
 		geometry.vertices.push( particle.position );
 		
