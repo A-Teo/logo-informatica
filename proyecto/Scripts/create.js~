@@ -86,7 +86,7 @@ var crearElementos = {
 				
 		particle = new THREE.Sprite( material );
 		particle.position.set(-80,10,-10);
-		particle.scale.x = particle.scale.y = 10;
+		//particle.scale.x = particle.scale.y = 10;
 		scene.add( particle );
 		geometry.vertices.push( particle.position );
 
@@ -105,7 +105,7 @@ var crearElementos = {
 		//scene.add( particle );
 		geometry.vertices.push( particle.position );
 		
-		var line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: 0xffffff, opacity: 1 } ) );
+		var line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: 0x00ffff, opacity: 0.5 } ) );
 		scene.add( line );
 
     }
