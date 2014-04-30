@@ -1,0 +1,20 @@
+<html>
+<head>
+	<title>Logo Ingenier&iacutea Inform&aacutetica - SVG</title>
+	<link rel="stylesheet" type ="text/css" href="Styles/svg.css"/>
+</head>
+<body>
+<svg id="logo" width="960" height="250">
+  <circle cx="480" cy="125" r="100" stroke="green" stroke-width="5" fill="blue"/>
+	<path id="caminoGlobo" >
+		M 150,150 A 76,55 0 0 1 433,278
+	</path>
+  <text>
+		<textPath xlink:href="#caminiGlobo">
+			INFORMATICA		
+		</textPath>  
+  </text>
+</svg>
+
+</body>
+</html> 

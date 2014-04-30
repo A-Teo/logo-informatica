@@ -1,7 +1,3 @@
-#sinImpuestos{
-	display: none;
-}
-
 form, p, button{
 	margin: 10px;
 }
@@ -17,10 +13,6 @@ form#salida output{
 	float: left;
 	font-weight: bold;
 	width: 20%;
-}
-
-#salida {
-	display: none;
 }
 
 form#salida label:nth-child(4n) { background-color: #ccc; }

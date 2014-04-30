@@ -3,10 +3,10 @@
 <head>
 	<meta name="author" content="Antonio Alurralde - David Zonneveld" />
 	<title>Formulario Impuestos RC-IVA Sin jQuery</title>
+	<script src="js/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" src="js/jquery.validate.min.js" ></script>
 	<script type="text/javascript" src="js/calculadora.js" ></script>
-	<script src="js/jquery-2.1.0.js"></script>
-
-	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 <body>
 	<form name="entrada" id="entrada" onsubmit="return false" >
@@ -20,10 +20,10 @@
 		<button type="reset">Borrar</button>
 		<button type="submit" onclick="calcular()">Calcular</button>
 	</form>
-	<section id="sinImpuestos" name="sinImpuestos">
+	<section id="sinImpuestos" hidden="hidden">
 		<p>De acuerdo a la RESOLUCI&#211;N ADMINISTRATIVA N&#176; 05-0040-99, INSTRUCTIVO 1 - AGENTES DE RETENCI&#211;N DEL SECTOR PUBLICO Y PRIVADO PARA EL R&#201;GIMEN COMPLEMENTARIO AL IMPUESTO AL VALOR AGREGADO. Si su Sueldo Neto o L&#237;quido Pagable es menor o igual a cuatro Salarios M&#237;nimos, Usted no debe presentar el Formulario 87. </p>
 	</section>
-	<form name="salida" id="salida">
+	<form name="salida" id="salida" hidden="hidden">
 		<fieldset>
 			<legend>C&#225;lculo de RC-IVA</legend>
 			<label for="dss">Descuento a la Seguridad Social (12.71%): </label>			
