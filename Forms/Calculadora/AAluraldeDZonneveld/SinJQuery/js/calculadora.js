@@ -4,7 +4,7 @@ var calcular = function () {
 		var salario = document.entrada.salario.value,
 			saldo = document.entrada.saldo.value,
 			sMin = 1200,
-			dss,a,b,c,d,e,f,g;
+			dss,a,b,c,d,e,f,g,h;
 		salario = Math.round(salario);
 		saldo = Math.round(saldo);
 		dss = Math.round(salario * 12.71 / 100);
@@ -18,8 +18,9 @@ var calcular = function () {
 			c = a - b;
 			d = Math.round(c * 13 / 100);
 			e = Math.round(b * 13 / 100);
-			f = d - e - saldo;
+			f = d - e;
 			g = Math.round(f * 100 / 13);
+			h = g - saldo;
 			var salida = document.salida;
 			salida.dss.value = dss;
 			salida.a.value = a;
@@ -29,6 +30,8 @@ var calcular = function () {
 			salida.e.value = e;
 			salida.f.value = f;
 			salida.g.value = g;
+			salida.saldoOut.value = saldo;
+			salida.h.value = h;
 			document.getElementById("salida").style.display='block';		
 		}
 	} else {

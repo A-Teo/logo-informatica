@@ -10,9 +10,10 @@
 	<form name="entrada" id="entrada" onsubmit="return false" >
 		<fieldset>
 			<legend>Datos Salario</legend>
-			<label for="salario">Salario</label>
+			<label for="salario">Salario:</label>
 			<input id="salario" name="salario" type="number" min="0" required="required" autocomplete="autocomplete"/>
-			<label for="saldo">Saldo a favor</label>
+			<br/>
+			<label for="saldo">Saldo a favor en facturas:</label>
 			<input id="saldo" name="saldo" type="number" min="0"/>			
 		</fieldset>
 		<button type="reset">Borrar</button>
@@ -36,10 +37,14 @@
 			<output id="d" name="d"></output>
 			<label for="e">E. 13% de 2 salarios m&#237;nimos: </label>			
 			<output id="e" name="e"></output>
-			<label for="f">F. Impuesto a Pagar (D - E - Saldo a favor): </label>			
+			<label for="f">F. Impuesto a Pagar (D - E): </label>			
 			<output id="f" name="f"></output>
-			<label for="g">Monto en facturas que puede presentar como pago a cuenta para cubrir el Impuesto a Pagar (Fx100/13): </label>			
+			<label for="g">G. Monto en facturas que puede presentar como pago a cuenta para cubrir el Impuesto a Pagar (Fx100/13): </label>			
 			<output id="g" name="g"></output>
+			<label for="saldoOut">Saldo en facturas: </label>			
+			<output id="saldoOut" name="saldoOut"></output>
+			<label for="h">H. Saldo neto en facturas que puede presentar: </label>			
+			<output id="h" name="h"></output>
 		</fieldset>
 	</form>
 </body>

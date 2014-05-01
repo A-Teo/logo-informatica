@@ -5,7 +5,7 @@ var calcular = function () {
 		var salario = $("#salario").val(),
 			saldo = $("#saldo").val(),
 			sMin = 1200,
-			dss,a,b,c,d,e,f,g;
+			dss,a,b,c,d,e,f,g,h;
 		salario = Math.round(salario);
 		saldo = Math.round(saldo);
 		dss = Math.round(salario * 12.71 / 100);
@@ -19,8 +19,9 @@ var calcular = function () {
 			c = a - b;
 			d = Math.round(c * 13 / 100);
 			e = Math.round(b * 13 / 100);
-			f = d - e - saldo;
+			f = d - e;
 			g = Math.round(f * 100 / 13);
+			h = g - saldo;
 			var salida = $("#salida");
 			$("#dss").val(dss);
 			$("#a").val(a);
@@ -30,6 +31,8 @@ var calcular = function () {
 			$("#e").val(e);
 			$("#f").val(f);
 			$("#g").val(g);
+			$("#saldoOut").val(saldo);
+			$("#h").val(h);
 			$("#salida").show();		
 		}
 	} else {
