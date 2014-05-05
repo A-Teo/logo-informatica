@@ -1,0 +1,39 @@
+#sinImpuestos{
+	display: none;
+}
+
+form, p, button{
+	margin: 10px;
+}
+
+form#entrada label{
+	width: 200px;
+	display: block;
+	clear: both;
+	float: left;
+	margin: 5px 0;
+}
+
+form#entrada input{
+	margin: 5px 0;
+}
+
+form#salida label{
+	width: 80%;
+	display: block;
+	clear: both;
+	float: left;
+}
+
+form#salida output{
+	float: left;
+	font-weight: bold;
+	width: 20%;
+}
+
+#salida {
+	display: none;
+}
+
+form#salida label:nth-child(4n) { background-color: #ccc; }
+form#salida output:nth-child(4n+1) { background-color: #ccc; }

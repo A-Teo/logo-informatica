@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<title>Servicio de Impuestos Nacionales - Calculadora Tributaria :::</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link href="Servicio%20de%20Impuestos%20Nacionales%20-%20Calculadora%20Tributaria_files/stilos.css" rel="stylesheet" type="text/css">
+</head>
+
+<body leftmargin="0" topmargin="0" bgcolor="#003C72" marginheight="0" marginwidth="0">
+<script language="JavaScript" type="text/JavaScript">
+function valida(form){
+	
+	if (form1.sueldo.value == ""){
+		alert("Por favor introduzca su Ingreso Total\nGracias.");
+		form1.sueldo.focus();
+		return false;	
+	}
+	
+	form1.submit();
+}
+</script>
+<table cellpadding="0" cellspacing="0" align="center" background="Servicio%20de%20Impuestos%20Nacionales%20-%20Calculadora%20Tributaria_files/lineamenu.gif" border="1" bordercolor="#FFC210" width="700">
+  <tbody><tr bordercolor="#003366" bgcolor="#003C72"> 
+    <td> <div class="textoamarillo" align="center">
+      <p><strong><img src="Servicio%20de%20Impuestos%20Nacionales%20-%20Calculadora%20Tributaria_files/titulo.jpg" height="70" width="700"></strong></p>
+        </div></td>
+  </tr>
+  <tr bordercolor="#003366" bgcolor="#003C72"> 
+    <td valign="top"><table cellpadding="0" cellspacing="0" background="Servicio%20de%20Impuestos%20Nacionales%20-%20Calculadora%20Tributaria_files/lineamenu.gif" border="0" height="25" width="700">
+        <tbody><tr> 
+          <td class="textocaja" background="Servicio%20de%20Impuestos%20Nacionales%20-%20Calculadora%20Tributaria_files/lineamenu1.gif" bgcolor="#0077BE" width="160"> 
+            <div class="textomenu" align="center"><a href="http://servicios.impuestos.gob.bo/calculadora/index.php">Deuda Tributaria</a></div></td>
+          <td width="15"><img src="Servicio%20de%20Impuestos%20Nacionales%20-%20Calculadora%20Tributaria_files/a1.gif" height="25" width="15"></td>
+          <td class="texto" bgcolor="#FFC210" width="160"> <div class="textomenuazul" align="center">RC-IVA 
+              Dependientes</div></td>
+          <td width="15"><img src="Servicio%20de%20Impuestos%20Nacionales%20-%20Calculadora%20Tributaria_files/a.gif" height="25" width="15"></td>
+          <td background="Servicio%20de%20Impuestos%20Nacionales%20-%20Calculadora%20Tributaria_files/lineamenu1.gif" bgcolor="#0077BE" width="160"><div class="textomenu" align="center"><a href="http://servicios.impuestos.gob.bo/calculadora/iue.php">IUE Independientes</a></div></td>
+          <td width="15"><img src="Servicio%20de%20Impuestos%20Nacionales%20-%20Calculadora%20Tributaria_files/c.gif" height="25" width="15"></td>
+          <td background="Servicio%20de%20Impuestos%20Nacionales%20-%20Calculadora%20Tributaria_files/lineamenu1.gif" bgcolor="#0077BE" width="160"><div align="center"><span class="textomenu">Cálculo TGB</span></div></td>
+          <td width="15"><img src="Servicio%20de%20Impuestos%20Nacionales%20-%20Calculadora%20Tributaria_files/b.gif" height="25" width="15"></td>
+        </tr>
+      </tbody></table></td>
+  </tr>
+  <tr bordercolor="#003366" bgcolor="#003C72"> 
+    <td class="texto" valign="top"><span class="textoamarillo"> </span> 
+      <p class="textoamarillo" align="center"><strong><br>
+        CÁLCULO DEL RC-IVA PARA FUNCIONARIOS DEPENDIENTES</strong></p>
+      <p align="justify"><span class="texto">Si usted es empleado (funcionario 
+        dependiente) de una institución pública o privada está 
+        sujeto al Régimen Complementario al IVA (RC-IVA) en forma mensual. 
+        </span><span class="texto">Digite el valor de su Ingreso Total (Sueldo 
+        o Total Ganado) y conocerá el monto que está alcanzado por 
+        el RC-IVA. </span></p>
+      <form action="rciva.php" method="post" name="form1" id="form1" onsubmit="return valida(this.form);">
+        <table cellpadding="0" cellspacing="2" border="0" width="100%">
+          <tbody><tr class="texto" bgcolor="#0077BE"> 
+            <td colspan="3"><img src="Servicio%20de%20Impuestos%20Nacionales%20-%20Calculadora%20Tributaria_files/fle.gif" height="14" width="14"> <span class="textoamarillo"><strong>PASO 
+              1: Introduzca su Ingreso Total (Sueldo o Total Ganado)</strong></span></td>
+          </tr>
+          <tr class="texto"> 
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr class="texto"> 
+            <td width="5%"><p>&nbsp; </p></td>
+            <td width="40%"><span class="texto">Ingreso Total</span>:</td>
+            <td width="55%"> <input name="sueldo" class="textocaja" id="impuesto3" onkeypress="if (event.keyCode < 46 || event.keyCode > 57) event.returnValue = false;" maxlength="15" type="text">
+              Bs.</td>
+          </tr>
+          <tr class="texto"> 
+            <td colspan="2" valign="top">&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr class="texto"> 
+            <td colspan="2" type="button" height="21" valign="top">&nbsp;</td>
+            <td><input name="Submit" value="Calcular Deuda Tributaria" src="Servicio%20de%20Impuestos%20Nacionales%20-%20Calculadora%20Tributaria_files/boton_formurciva.gif" alt="Calcular Deuda Tributaria" height="35" type="image" width="197"> 
+            </td>
+          </tr>
+          <tr class="texto"> 
+            <td colspan="2" type="button" height="21" valign="top">&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr class="texto"> 
+            <td colspan="3" type="button" height="21" valign="top"><p> Nota: Este 
+                cálculo no considera el saldo a favor del dependiente del 
+                período anterior.</p></td>
+          </tr>
+        </tbody></table>
+      </form></td>
+  </tr>
+  <tr bordercolor="#003366" bgcolor="#FFC210"> 
+    <td bgcolor="#003C72"> <div class="txtsin"> 
+        <div class="txtsin"> </div>
+      </div></td>
+  </tr>
+</tbody></table>
+<table cellpadding="0" cellspacing="0" align="center" border="0" width="700">
+  <tbody><tr>
+    <td><span class="texto"><span class="textoamarillo">Nota:</span> El presente es un cálculo de carácter referencial que no tiene validez de carácter legal.</span></td>
+  </tr>
+</tbody></table>
+<p>&nbsp;</p>
+
+
+</body></html>

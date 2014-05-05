@@ -1,0 +1,16 @@
+<html>
+<head>
+	<title>Logo Ingenier&iacutea Inform&aacutetica - SVG</title>
+	<link rel="stylesheet" type ="text/css" href="Styles/svg.css"/>
+</head>
+<body>
+<svg id="logo" width="960" height="350">
+ <path d='M 150,150 A 75,50 0 1 1 200,150 A 60,60 0 1 1 250,150 A 75,50 0 1 1 300,150'/>
+</svg>
+
+<svg id="logo" width="960" height="350">
+ <path d='M 150,150 A 75,50 0 1 1 200,150 A 60,60 0 1 1 250,150 A 75,50 0 1 1 300,150 A 100,50 0 1 0 150,151'/>
+</svg>
+
+</body>
+</html> 

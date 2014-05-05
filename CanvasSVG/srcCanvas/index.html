@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Logo Ingeniería en Informática UMSS</title>
+    <link rel="stylesheet" type ="text/css" href="Styles/canvas.css"/>
+</head>
+<body>
+    <script src ="Scripts/three.min.js" ></script>
+    <script src ="Scripts/init.js"></script>
+    <script src ="Scripts/create.js"></script>
+    <script src ="Scripts/update.js"></script>
+    <script src="res/fonts/optimer_regular.typeface.js"></script>
+    <script src="res/fonts/optimer_bold.typeface.js"></script>
+    <script src="res/fonts/helvetiker_regular.typeface.js"></script>
+    <script src="res/fonts/helvetiker_bold.typeface.js"></script>  
+    <script src="res/fonts/gentilis_regular.typeface.js"></script>
+    <script src="res/fonts/gentilis_bold.typeface.js"></script>    
+    <canvas id ="logo" height="250" width="960"></canvas>
+    <script>
+        var renderer;
+        var scene;
+        var camera;
+        var textoRotatorio1;
+        var textoRotatorio2;
+        var nubesRotatorias2;
+        window.onload = function () {
+            init();
+            animate();
+        }
+
+        function animate() {
+            updateScene();
+            renderer.render(scene, camera);
+            window.requestAnimationFrame(animate);
+        }
+
+        function setScene() {
+            scene.add(crearElementos.globo());
+            textoRotatorio1 = crearElementos.textoRotatorio("Informática");
+            scene.add(textoRotatorio1);
+            textoRotatorio2 = crearElementos.textoRotatorio("Ingeniería");
+            scene.add(textoRotatorio2);
+            nubesRotatorias = crearElementos.nubes();
+            scene.add(nubesRotatorias);
+            scene.add(crearElementos.textoLambda("i++"));
+
+            
+            //var geometry = new THREE.Geometry();
+
+            //crearElementos.grafo();
+        }
+
+        function updateScene() {
+            actualizarElementos.rotarTexto1();
+            actualizarElementos.rotarTexto2();
+            actualizarElementos.rotarNubes();
+        }
+        
+    </script>
+</body>
+</html>

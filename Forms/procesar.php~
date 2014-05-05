@@ -1,0 +1,16 @@
+<?php
+	$email = $_GET["email"];
+	$manejadorCookies -> setCookies($email);
+	
+	class manejadorCookies {
+		setCookies($email) {
+			$emails = $_cookie["mail"];
+			if( $emails[$email]) {
+					$emails[] ++ 
+			} else {
+				setcookie($_GET["e-mail"], $value = null, $expire = null, $path = null, $domain = null, $secure = null, $httponly = null);	
+			}	
+		}
+	}
+	
+?>

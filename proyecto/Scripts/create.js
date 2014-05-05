@@ -1,4 +1,4 @@
-﻿var crearElementos = {
+var crearElementos = {
     globo: function () {
         var geometry = new THREE.SphereGeometry(12, 32, 32);
         var material = new THREE.MeshNormalMaterial({ color: 0x70a0e0 });
@@ -144,14 +144,7 @@
     
     grafo: function () {
     	var PI2 = Math.PI*2;
-		var material = new THREE.SpriteCanvasMaterial( {
-			color: 0xffffff,
-			program: function ( context ) {
-				context.beginPath();
-				context.arc( 0, 0, 0.5, 0, PI2, true );
-				context.fill();
-			}
-		});
+		var material = new THREE.MeshNormalMaterial({ color: 0x309070 });
 		var geometry = new THREE.Geometry();
 
 		particle = new THREE.Sprite( material );
@@ -181,7 +174,7 @@
 		//scene.add( particle );
 		geometry.vertices.push( particle.position );
 		
-		var line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: 0xffffff, opacity: 1 } ) );
+		var line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: 0xffffff, opacity: 0.5 } ) );
 		scene.add( line );
 
     }

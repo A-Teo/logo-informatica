@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="author" content="Antonio Alurralde - David Zonneveld" />
+	<title>Formulario Impuestos RC-IVA Sin jQuery</title>
+	<script src="js/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" src="js/jquery.validate.min.js" ></script>
+	<script type="text/javascript" src="js/calculadora.js" ></script>
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+<body>
+	<form name="entrada" id="entrada" onsubmit="return false" >
+		<fieldset>
+			<legend>Datos Salario</legend>
+			<label for="salario">Salario</label>
+			<input id="salario" name="salario" type="number" min="0" required="required" autocomplete="autocomplete"/>
+			<label for="saldo">Saldo a favor</label>
+			<input id="saldo" name="saldo" type="number" min="0"/>			
+		</fieldset>
+		<button type="reset">Borrar</button>
+		<button type="submit" onclick="calcular()">Calcular</button>
+	</form>
+	<section id="sinImpuestos" hidden="hidden">
+		<p>De acuerdo a la RESOLUCI&#211;N ADMINISTRATIVA N&#176; 05-0040-99, INSTRUCTIVO 1 - AGENTES DE RETENCI&#211;N DEL SECTOR PUBLICO Y PRIVADO PARA EL R&#201;GIMEN COMPLEMENTARIO AL IMPUESTO AL VALOR AGREGADO. Si su Sueldo Neto o L&#237;quido Pagable es menor o igual a cuatro Salarios M&#237;nimos, Usted no debe presentar el Formulario 87. </p>
+	</section>
+	<form name="salida" id="salida" hidden="hidden">
+		<fieldset>
+			<legend>C&#225;lculo de RC-IVA</legend>
+			<label for="dss">Descuento a la Seguridad Social (12.71%): </label>			
+			<output id="dss" name="dss"></output>
+			<label for="a">A. Ingreso Neto o Pagable: </label>			
+			<output id="a" name="a"></output>
+			<label for="b">B. 2 salarios m&#237;nimos nacionales (1200 x 2): </label>			
+			<output id="b" name="b"></output>
+			<label for="c">C. Diferencia (A - B): </label>			
+			<output id="c" name="c"></output>
+			<label for="d">D. Impuesto Determinado (13% de C): </label>			
+			<output id="d" name="d"></output>
+			<label for="e">E. 13% de 2 salarios m&#237;nimos: </label>			
+			<output id="e" name="e"></output>
+			<label for="f">F. Impuesto a Pagar (D - E - Saldo a favor): </label>			
+			<output id="f" name="f"></output>
+			<label for="g">Monto en facturas que puede presentar como pago a cuenta para cubrir el Impuesto a Pagar (Fx100/13): </label>			
+			<output id="g" name="g"></output>
+		</fieldset>
+	</form>
+</body>
+</html>

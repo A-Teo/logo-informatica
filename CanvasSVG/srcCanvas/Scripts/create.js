@@ -1,4 +1,4 @@
-﻿var crearElementos = {
+var crearElementos = {
     globo: function () {
         var geometry = new THREE.SphereGeometry(12, 32, 32);
         var material = new THREE.MeshNormalMaterial({ color: 0x70a0e0 });
@@ -155,13 +155,8 @@
 				
 		particle = new THREE.Sprite( material );
 		particle.position.set(-80,10,-10);
-<<<<<<< HEAD
-		//particle.scale.x = particle.scale.y = 10;
-		scene.add( particle );
-=======
 		particle.scale.x = particle.scale.y = 10;
 		//scene.add( particle );
->>>>>>> 56a10af767ad34acd5af132dfb07c04a9d473705
 		geometry.vertices.push( particle.position );
 
 		particle = new THREE.Sprite( material );

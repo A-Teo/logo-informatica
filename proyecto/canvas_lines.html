@@ -62,7 +62,7 @@
 					program: function ( context ) {
 
 						context.beginPath();
-						context.arc( 0, 0, 0.5, 0, PI2, true );
+						context.arc( 0, 0, 1.5, 0, PI2, true );
 						context.fill();
 
 					}
@@ -75,12 +75,14 @@
 
 					particle = new THREE.Sprite( material );
 					particle.position.set(0,0,0);
+					//particle.scale.x = particle.scale.y = 10;
 					scene.add( particle );
 
 					geometry.vertices.push( particle.position );
 					
 					particle = new THREE.Sprite( material );
 					particle.position.set(10,10,10);
+					//particle.scale.x = particle.scale.y = 10;
 					scene.add( particle );
 
 					geometry.vertices.push( particle.position );
@@ -106,7 +108,7 @@
 
 				// lines
 
-				var line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: 0xffffff, opacity: 1 } ) );
+				var line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: 0xffffff, opacity: 0.5 } ) );
 				scene.add( line );
 
 				document.addEventListener( 'mousemove', onDocumentMouseMove, false );
