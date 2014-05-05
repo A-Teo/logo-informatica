@@ -13,7 +13,7 @@
     },
 
     texto: function (text) {
-		var 	height = 1,
+		var height = 1,
             size = 6,
 
             curveSegments = 4,
@@ -44,20 +44,20 @@
         var centerOffset = -0.5 * (textGeo.boundingBox.max.x - textGeo.boundingBox.min.x);
         var txt1 = new THREE.Mesh(textGeo, material);
         txt1.position.x = centerOffset;
-        txt1.position.z = 15;
         txt1.position.y = -2.5;
+        txt1.position.z = 15;
         return txt1;
     },
     nubes: function () {
         var group = new THREE.Object3D();
         var geometry = new THREE.Geometry();
         //group.add(crearElementos.nube(0, 0, 0, geometry));
-        group.add(crearElementos.nube(-50, 10, -10, geometry));
-        group.add(crearElementos.nube(38, 5, -5, geometry));
-        group.add(crearElementos.nube(45, -5, 10, geometry));
+        group.add(crearElementos.nube(-50, 0, -10, geometry));
+        group.add(crearElementos.nube(38, 0, -5, geometry));
+        group.add(crearElementos.nube(45, 0, 10, geometry));
         //group.add(crearElementos.nube(0, 0, 0, geometry));
-        group.add(crearElementos.nube(-20, -7, 15, geometry));
-        group.add(crearElementos.nube(-50, 10, -10, geometry));
+        group.add(crearElementos.nube(-20, 0, 15, geometry));
+        group.add(crearElementos.nube(-50, 0, -10, geometry));
         //group.add(crearElementos.nube(0, 0, 0, geometry));
         var line = new THREE.Line(geometry, new THREE.LineBasicMaterial({ color: 0xffffff, opacity: 1 }));
         group.add(line);
