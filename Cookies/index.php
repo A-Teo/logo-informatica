@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
-	<meta name="author" content="http://www.PubliAciertos.net/" />
+	<meta name="author" content="Antonio Alurralde & David Zonneveld" />
 	<title>Cookies</title>
 </head>
 <body>
@@ -19,21 +19,26 @@
 		</fieldset>		
 	</form>
 	<?php
-	if(isset($_GET["email"])) {
-		$nombre = $_GET["nombre"];
-		$email = $_GET["email"];
-		print_r($_COOKIE);
-		echo "<br>";
-		echo $email;
-		echo $_COOKIE[$email];
-		if(isset($_COOKIE[$email])) {
-			$cookie = $_COOKIE[$email];
-			$cookie++;
-			echo $cookie." ya sabe";
-		} else {
-			setcookie($email, 0, time()+3600, '/web/cookies/','localhost');
-			echo "No sabe";
+	/**
+	* Crea o actualiza una Cookie usando como llave la dirección de correo.
+	*
+	* @return nada.
+	* @param nada.
+	*/
+	function cookie() {
+		if(isset($_GET["email"])) {
+			$nombre = $_GET["nombre"];
+			$email = $_GET["email"];
+			$email = str_replace(".", "*", $email);
+			if(isset($_COOKIE[$email])) {
+				$cookie = $_COOKIE[$email];
+				$cookie++;
+				setcookie($email, $cookie, time()+3600, '/web/cookies/','localhost', NULL, true);			
+			} else {			
+				setcookie($email, 1, time()+3600, '/web/cookies/','localhost', null, true);
+			}
 		}
 	}
+	cookie();
 	?>
 </body>
