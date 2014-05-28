@@ -10,7 +10,6 @@
 	* Crea un reporte tomando datos de cookies.
 	*
 	* @return Cadena que contiene la tabla de email y entradas en HTML.
-	* @param nada.
 	*/
 	function reporte() {
 		if(count($_COOKIE)!=0) {

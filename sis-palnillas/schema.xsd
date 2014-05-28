@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	
+	<xs:element name="pcd">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="head" type="headType">
+				</xs:element>
+				<xs:element name="body" type="bodyType">
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="headType">
+		<xs:sequence>
+		    <xs:element name="info" type="xs:string"/>
+		    <xs:element name="column" type="columnType"/>
+		    <xs:element name="group" type="groupType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="columnType">
+		<xs:sequence>
+		    <xs:element name="template" type="templateType"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="templateType" mixed="true">
+		<xs:sequence>
+		    <xs:element name="normal" type="xs:string"/>
+		    <xs:element name="me" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="groupType">
+		<xs:sequence>
+		    <xs:element name="normal" type="xs:string"/>
+		    <xs:element name="me" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="bodyType">
+		<xs:sequence>
+		    <xs:element name="gradelist" type="gradelistType"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="gradelistType">
+		<xs:sequence>
+		    <xs:element name="P1"/>
+		    <xs:element name="P2"/>
+		    <xs:element name="P3"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -21,9 +21,6 @@
 	<?php
 	/**
 	* Crea o actualiza una Cookie usando como llave la dirección de correo.
-	*
-	* @return nada.
-	* @param nada.
 	*/
 	function cookie() {
 		if(isset($_GET["email"])) {
@@ -33,9 +30,9 @@
 			if(isset($_COOKIE[$email])) {
 				$cookie = $_COOKIE[$email];
 				$cookie++;
-				setcookie($email, $cookie, time()+3600, '/web/cookies/','localhost', NULL, true);			
+				setcookie($email, $cookie, time()+3600, '/','localhost', NULL, true);			
 			} else {			
-				setcookie($email, 1, time()+3600, '/web/cookies/','localhost', null, true);
+				setcookie($email, 1, time()+3600, '/','localhost', null, true);				
 			}
 		}
 	}

@@ -20,12 +20,10 @@
 	</form>	
 	<script>
 	/**
-	* Crea o actualiza una Cookie usando como llave la dirección de correo.
-	*
-	* @return nada.
-	* @param nada.
+	* Function que verifica el soporte de webStorage y crea nuestro localstorage en caso de que existiese.
 	*/
 		function storage() {
+			localStorage.clear();
 			if(localStorage){
 				if (!localStorage.webStorageMail) {
 					localStorage.setItem("webStorageMail", JSON.stringify(new Object())); //creamos nuestro propio namespace para no meternos con la basura de otros sitios.
@@ -35,6 +33,9 @@
 				alert("Su navegador no soporta Webstorage :(");
 			}
 		}
+		/**
+		*	Funcion que actualiza el conteo de emails
+		*/
 		function insertarEmail () {
 			var email = document.getElementById("email").value;
 			var emails = JSON.parse(localStorage.getItem("webStorageMail"));

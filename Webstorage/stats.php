@@ -8,9 +8,7 @@
 	<script>
 	/**
 	* Función anónima que crea un reporte tomando datos de cookies.
-	*
 	* @return Cadena que contiene la tabla de email y entradas en HTML.
-	* @param nada.
 	*/
 	(function() {
 		/**
@@ -48,7 +46,7 @@
 			tr.appendChild(tdE);
 			tr.appendChild(tdC);
 			tabla.appendChild(tr);
-		}
+		};
 		/**
 			Funcion que llena la tabla con los valores de mi localStorage.
 		*/
@@ -58,17 +56,20 @@
 				crearFila(tabla, email, emails[email]);			
 			}
 		};
-		if (localStorage) {
-			if (localStorage.webStorageMail && localStorage.webStorageMail.length > 0) {
-				var tabla = createTable();
-				llenarTabla(tabla);
-			} else {
-				var parrafo = document.createElement("p"),
-				txt = document.createTextNode("No hay datos");
-				parrafo.appendChild(txt);
-				cuerpo[0].appendChild(parrafo);
-			}			
+		var generarOutput = function() {
+			if (localStorage) {
+				if (localStorage.webStorageMail && localStorage.webStorageMail.length > 0) {
+					var tabla = createTable();
+					llenarTabla(tabla);
+				} else {
+					var parrafo = document.createElement("p"),
+					txt = document.createTextNode("No hay datos");
+					parrafo.appendChild(txt);
+					cuerpo[0].appendChild(parrafo);
+				}			
+			}
 		}
+		generarOutput();
 	}
 	)();
 	</script>	
