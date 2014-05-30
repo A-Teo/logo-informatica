@@ -1,0 +1,5 @@
+{if $state == 0}
+	{include file="login.tpl"}
+{else}
+	En construcción! :P
+{/if}
