@@ -52,7 +52,7 @@ EOF;
 		$html = $this->replace("title",$title,self::HTML);
 
 		$form = $this->replace("action",$action,self::FORM);
-		$formfields = "";
+		$formFields = "";
 
 		foreach ($fields as $field) {
 			$oneField = self::FIELD;

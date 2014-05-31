@@ -7,6 +7,7 @@
  {
   	$_SESSION['count'] = 0;
   	$_SESSION['time'] = time();
+	echo time();
  } 
  else 
  {

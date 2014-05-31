@@ -15,7 +15,7 @@ if (isset($_SESSION['cuenta'])) {
     $action  = htmlentities('logincheck.php');
 
 
-    $theFields = ['user','password'];      
+    $theFields = array('user','password');      
     $page = $htmlTemp->buildForm($title,$action, $theFields );
 
     echo $page;
