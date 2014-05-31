@@ -30,7 +30,7 @@ class Database
 	}
 
  	public function getRow($sql,$fields) {		
-		return mysql_query($sql, $this->connection);
+		return mysql_query($sql,$this->connection);
 	}
 
  	public function execute($sql,$fields) { 		

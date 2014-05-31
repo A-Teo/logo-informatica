@@ -19,5 +19,7 @@ if (isset($_SESSION['cuenta'])) {
     $page = $htmlTemp->buildForm($title,$action, $theFields );
 
     echo $page;
+    echo "<script>alert('Hola');</script>";
+echo "Hola";
 }
 ?>

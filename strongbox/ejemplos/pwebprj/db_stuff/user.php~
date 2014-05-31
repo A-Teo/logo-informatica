@@ -58,7 +58,7 @@ class UserDBMap {
 		$row = $this->conn->getRow(self::SELECT_VAL, array("$cuenta","$password") );
 
 
-		if (mysql_num_rows($row) == 1) {
+		if (pg_num_rows($row) == 1) {
 			$user = new User(pg_fetch_array($row,0)); 
 			
 			return $user; 
