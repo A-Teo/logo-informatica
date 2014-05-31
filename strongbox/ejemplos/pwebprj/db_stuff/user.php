@@ -56,11 +56,8 @@ class UserDBMap {
 	
 	public function verificar($cuenta,$password) { 
 		$row = $this->conn->getRow(self::SELECT_VAL, array("$cuenta","$password") );
-
-
 		if (mysql_num_rows($row) == 1) {
-			$user = new User(pg_fetch_array($row,0)); 
-			
+			$user = new User(pg_fetch_array($row,0));
 			return $user; 
 		} else {
 			return NULL; 

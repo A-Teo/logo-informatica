@@ -28,7 +28,7 @@ if (isset($_SESSION['cuenta'])) {
 
     echo $page;
 }else {
-    header("Location: /pwebprj/login.php");
+    header("Location: ../pwebprj/login.php");
 }
 
 ?>

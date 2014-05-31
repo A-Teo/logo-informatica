@@ -53,7 +53,6 @@ EOF;
 
 		$form = $this->replace("action",$action,self::FORM);
 		$formFields = "";
-
 		foreach ($fields as $field) {
 			$oneField = self::FIELD;
 			$formFields = $formFields . $this->replace("field",$field,self::FIELD); 
@@ -61,7 +60,7 @@ EOF;
 		}
 
 		$form = $this->replace("fields",$formFields,$form);
-
+		
 		$html = $this->replace("body" ,$form ,$html);
 		
 		return $html; 

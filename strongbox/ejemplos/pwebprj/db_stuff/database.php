@@ -15,8 +15,8 @@ class Database
        $this->dbHost = 'localhost';
        $this->dbPort = '3306';
        $this->dbName = 'strongbox';
-       $this->dbUser = 'usuario';
-       $this->dbPassword = 'BDUsuario';
+       $this->dbUser = 'root';
+       $this->dbPassword = '';
        
        
        $this->connection = mysql_connect($this->dbHost, $this->dbUser, $this->dbPassword)
@@ -29,10 +29,19 @@ class Database
 		return mysql_query($sql, $this->connection);
 	}
 
- 	public function getRow($sql,$fields) {		
+ 	public function getRow($sql,$fields) {
+		$this -> replace($sql, $fields);
+		die($sql);		
 		return mysql_query($sql, $this->connection);
 	}
 
+	public function replace($sql, $fields) {
+		foreach ($fields as $index => $field ) {
+			die($sql.$index.$field);
+			str_replace($index, $field, $sql);
+		}
+	}
+	
  	public function execute($sql,$fields) { 		
 		return mysql_query($sql,$this->connection);
 	}
