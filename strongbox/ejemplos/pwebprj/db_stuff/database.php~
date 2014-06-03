@@ -15,13 +15,13 @@ class Database
        $this->dbHost = 'localhost';
        $this->dbPort = '3306';
        $this->dbName = 'strongbox';
-       $this->dbUser = 'usuario';
-       $this->dbPassword = 'BDUsuario';
+       $this->dbUser = 'root';
+       $this->dbPassword = 'root';
        
        
        $this->connection = mysql_connect($this->dbHost, $this->dbUser, $this->dbPassword)
                               or die ("No es posible alcanzar el servidor\n");
-			$this->connection = mysql_select_db($this->dbName, $this->connection) or die ("No es posible alcanzar la BD\n");;
+		 mysql_select_db($this->dbName, $this->connection) or die ("No es posible alcanzar la BD\n");;
  
    }    
  
@@ -29,11 +29,27 @@ class Database
 		return mysql_query($sql, $this->connection);
 	}
 
- 	public function getRow($sql,$fields) {		
-		return mysql_query($sql,$this->connection);
+ 	public function getRow($sql,$fields) {
+		$sql = $this -> replace($sql, $fields);
+		//die($sql." ".$this->connection);		
+		$result = mysql_query($sql, $this->connection);
+		//die($sql . $result);
+		//$row = mysql_fetch_row($result);
+		$row = $result;
+		return $row;
 	}
 
- 	public function execute($sql,$fields) { 		
+	public function replace($sql, $fields) {
+		foreach ($fields as $index => $field ) {
+			$var = "$" . ($index + 1);			
+			$sql = str_replace($var, "'".$field."'", $sql);
+		}
+		return $sql;
+	}
+	
+ 	public function execute($sql,$fields) {
+ 		$sql = $this -> replace($sql, $fields);
+		die($sql." Hola"); 		
 		return mysql_query($sql,$this->connection);
 	}
 	

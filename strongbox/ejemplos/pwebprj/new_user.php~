@@ -23,7 +23,7 @@ if (isset($_SESSION['cuenta'])) {
     $action  = htmlentities($_SERVER['PHP_SELF']);
 
     
-    $theFields = array('cuenta','password');      
+    $theFields = ['cuenta','password'];      
     $page = $htmlTemp->buildForm($title,$action, $theFields );
 
     echo $page;

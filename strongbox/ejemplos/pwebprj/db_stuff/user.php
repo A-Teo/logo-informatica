@@ -4,8 +4,8 @@ class User {
 	protected $password; 
 
 	public function __construct($arr) {
-		$this->cuenta   = htmlspecialchars($arr['cuenta']);
-		$this->password   = htmlspecialchars($arr['password']);
+		$this->cuenta = htmlspecialchars($arr['cuenta']);
+		$this->password = md5(htmlspecialchars($arr['password']));
 
 	}
 	
@@ -56,8 +56,10 @@ class UserDBMap {
 	
 	public function verificar($cuenta,$password) { 
 		$row = $this->conn->getRow(self::SELECT_VAL, array("$cuenta","$password") );
+		//print_r($row);
+		//die($row);
 		if (mysql_num_rows($row) == 1) {
-			$user = new User(pg_fetch_array($row,0));
+			$user = new User(mysql_fetch_array($row,0));
 			return $user; 
 		} else {
 			return NULL; 
@@ -68,7 +70,7 @@ class UserDBMap {
 		$rs = $this->conn->execute(self::INSERT_SQL ,array(
 				$user->getCuenta() ,$user->getPassword() ) );
 	
-		if ($rs && $this->verificar($user->getCuenta())) {
+		if ($rs && $this->verificar($user->getCuenta(), $user->getPassword())) {
 			return true;
 		} else return false;
 	}
