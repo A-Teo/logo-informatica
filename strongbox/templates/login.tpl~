@@ -1,5 +1,12 @@
-<form>
-	<input type="text" id="usuario" name="usuario" />
-	<br />
-	<input type="password" id="pass" name="pass" />
+<form action="controllers/{$archivo}.php" method="POST">
+	<fieldset>
+		<legend>{$title}</legend>
+		<label for="user">User: </label>
+		<input type="text" id="user" name="user" />
+		<br />
+		<label for="password">Password: </label>
+		<input type="password" id="password" name="password" />
+		<br />
+		<button type="submit">{$title}</button>
+	</fieldset>	
 </form>

@@ -1,5 +1,6 @@
 {if $state == 0}
 	{include file="login.tpl"}
 {else}
-	En construcción! :P
+   {include file = "menu_usuario.tpl"}
+   {include file = "user_body.tpl"}	
 {/if}

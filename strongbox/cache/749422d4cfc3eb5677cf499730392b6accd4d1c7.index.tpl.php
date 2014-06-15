@@ -1,4 +1,4 @@
-<?php /*%%SmartyHeaderCode:9791538dcce54a26d9-07041540%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2949539e091f9a5c03-81852840%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -17,13 +17,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '562e1ca8427e64dd9668ae2f08a796d732ac8b21' => 
     array (
       0 => '.\\templates\\body.tpl',
-      1 => 1399950542,
+      1 => 1402270742,
       2 => 'file',
     ),
     '0390f83576cc40b989c12a7362afcba143967e43' => 
     array (
       0 => '.\\templates\\login.tpl',
-      1 => 1399949582,
+      1 => 1402277100,
       2 => 'file',
     ),
     '1be7ff7fdee636597edd726ee98dfef4bfd55d1f' => 
@@ -33,13 +33,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '9791538dcce54a26d9-07041540',
+  'nocache_hash' => '2949539e091f9a5c03-81852840',
   'has_nocache_code' => true,
   'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_538dcce57188d1_31867799',
+  'unifunc' => 'content_539e091fc067e6_45548219',
   'cache_lifetime' => 120,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_538dcce57188d1_31867799')) {function content_538dcce57188d1_31867799($_smarty_tpl) {?><!DOCTYPE html>
+<?php if ($_valid && !is_callable('content_539e091fc067e6_45548219')) {function content_539e091fc067e6_45548219($_smarty_tpl) {?><!DOCTYPE html>
 <HTML>
 <HEAD>
 <TITLE><?php echo $_smarty_tpl->tpl_vars['title']->value;?>
@@ -47,11 +47,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </HEAD>
 <BODY bgcolor="#ffffff">
 
-	<form>
-	<input type="text" id="usuario" name="usuario" />
-	<br />
-	<input type="password" id="pass" name="pass" />
-	<button type="submit">Log In</button>
+	<form action="controllers/logincheck.php" method="POST">
+	<fieldset>
+		<legend>Login</legend>
+		<label for="cuenta">Cuenta: </label>
+		<input type="text" id="cuenta" name="cuenta" />
+		<br />
+		<label for="password">Password: </label>
+		<input type="password" id="password" name="password" />
+		<br />
+		<button type="submit">Login</button>
+	</fieldset>	
 </form>
 
 </BODY>

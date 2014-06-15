@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<?php
+include('lock.php');
+include ('../db_stuff/db.php');
+include ('../db_stuff/mapper.php');
+
+$url = "Location: ../index.php";
+//echo "<script>alert('Hola');</script>"; 
+if (!isset($_SESSION['cuenta'])) {
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if ($_POST['user'] != NULL ) {
+    	   $db = Database::getInstance();
+        	$dbUser = new UserDBMap($db);
+			//echo md5($_POST['password']);
+			//print_r($_POST);
+         $user = $dbUser->verificar($_POST['user'],md5($_POST['password']));
+        	if ($user != NULL ){
+                $_SESSION['cuenta'] = $user->getCuenta();
+                //$url = "Location: ../pwebprj/new_user.php";
+            }
+        }
+    }
+}
+//die($_SESSION['cuenta']. " HOla");
+header($url);
+?>
