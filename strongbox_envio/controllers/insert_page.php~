@@ -17,7 +17,7 @@ if (isset($_SESSION['cuenta'])) {
 			$input[$clave] = htmlspecialchars($valor);
 		}
 		
-    	$dbStrong->insertar($input, $_SESSION['cuenta']);       
+    	$dbStrong->insertar($_POST, $_SESSION['cuenta']);       
     }
 }
 header($url);

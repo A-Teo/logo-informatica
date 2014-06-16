@@ -27,9 +27,8 @@
 {elseif $page == 2 }
 	{foreach from=$pages item=row}
 		{foreach from=$row item=col}
-	   	{$col}
+	   	{$col} <br />
 	   {/foreach}
-	   <br />
 	{/foreach}
 {elseif $page == 3 }
 	{include file="new_user.tpl" archivo="new_user" title="Nuevo Usuario"}
